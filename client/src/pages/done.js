@@ -1,7 +1,7 @@
 import Head from "next/head";
 import MainLayout from "../components/layout/main";
 
-export default function Home() {
+export default function Completed() {
   return (
     <>
       <Head>
@@ -16,6 +16,6 @@ export default function Home() {
   );
 }
 
-Home.getLayout = (page) => {
-  return <MainLayout active={"incomplete"}>{page}</MainLayout>;
+Completed.getLayout = (page) => {
+  return <MainLayout active={"complete"}>{page}</MainLayout>;
 };
