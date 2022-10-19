@@ -1,11 +1,41 @@
 import Link from "next/link";
+
 import TaskCard from "../task-card";
+import NavbarItem from "../navbar-item";
+import Items from "../../static/navbar-items";
 
 const MainLayout = (props) => {
-  const { active } = props;
+  const { active, children } = props;
   return (
-    <main className="flex h-screen w-full bg-white">
-      <div className=" h-full w-full max-w-sm bg-inherit">
+    <main className="flex h-screen w-full flex-col bg-white">
+      <nav className="flex h-16 w-full items-center justify-between rounded px-8 shadow">
+        <div>
+          <Link href={"/"}>
+            <h1 className="text-2xl font-semibold capitalize tracking-wider">
+              task manager
+            </h1>
+          </Link>
+        </div>
+        <ul className="flex">
+          {Items.map((content, idx) => (
+            <NavbarItem
+              key={idx}
+              idx={idx}
+              {...content}
+              isActive={active === content.title}
+            />
+          ))}
+          <NavbarItem
+            href={"/settings"}
+            isActive={active === "setting"}
+            title={"Sumit"}
+            icon={"/icons/user.svg"}
+            iconAlt={"/icons/user.svg"}
+          />
+        </ul>
+      </nav>
+      <div className="h-full w-full overflow-y-auto bg-graph">{children}</div>
+      {/* <div className=" h-full w-full max-w-sm bg-inherit">
         <section className="flex h-20 w-full select-none items-center border-b border-b-slate-200 px-8">
           <h1 className="text-3xl font-black tracking-wide">Task Manager</h1>
         </section>
@@ -75,7 +105,7 @@ const MainLayout = (props) => {
             <TaskCard />
           </section>
         </section>
-      </div>
+      </div> */}
     </main>
   );
 };

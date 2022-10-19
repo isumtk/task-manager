@@ -1,9 +1,0 @@
-.navbar-option-body-active {
-  @apply flex h-20 w-full items-center;
-  @apply mt-4 mb-2 rounded-l bg-violet-500 pl-8 text-white;
-}
-
-.navbar-option-body {
-  @apply flex h-20 w-full items-center;
-  @apply mt-4  mb-2 rounded bg-inherit pl-8;
-}

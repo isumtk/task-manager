@@ -5,10 +5,7 @@ export default function Completed() {
   return (
     <>
       <Head>
-        <title>
-          Task Manager - Manage your tasks, edit, complete and delete your
-          tasks.
-        </title>
+        <title>Finished Tasks</title>
         <meta name="description" content="Task Manager app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -17,5 +14,5 @@ export default function Completed() {
 }
 
 Completed.getLayout = (page) => {
-  return <MainLayout active={"complete"}>{page}</MainLayout>;
+  return <MainLayout active={"finished"}>{page}</MainLayout>;
 };
