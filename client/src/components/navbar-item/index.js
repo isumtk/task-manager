@@ -1,11 +1,12 @@
 import Link from "next/link";
 
 const NavbarItem = (props) => {
-  const { href, isActive, icon, iconAlt, title, idx } = props;
+  const { href, isActive, icon, iconAlt, title, onClick } = props;
   return (
-    <Link href={href}>
-      <li className={idx === 0 ? "mx-4" : "mr-4"}>
+    <Link href={href ? href : ""}>
+      <li className={"mr-2"}>
         <div
+          onClick={onClick ? onClick : null}
           className={`flex cursor-pointer select-none items-center rounded-xl py-2 px-4 ${
             isActive ? "bg-indigo-200" : null
           }`}

@@ -17,6 +17,12 @@ const Items = [
     icon: "/icons/history.svg",
     iconAlt: "/icons/history.svg",
   },
+  {
+    href: "/setting",
+    title: "setting",
+    icon: "/icons/cog.svg",
+    iconAlt: "/icons/cog-alt.svg",
+  },
 ];
 
 export default Items;

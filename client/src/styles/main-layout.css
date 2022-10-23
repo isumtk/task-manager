@@ -1,0 +1,28 @@
+.main-layout-container {
+  display: grid;
+  grid-template-rows: 64px calc(100% - 64px);
+  @apply h-screen w-full bg-white;
+}
+
+.main-nav {
+  grid-row: 1/2;
+  @apply flex;
+}
+
+.main-body {
+  grid-row: 2/3;
+  @apply flex h-full w-full bg-slate-100;
+}
+
+.main-logo {
+  width: 312px;
+  @apply flex items-center justify-center;
+}
+
+.main-logo-text {
+  @apply text-2xl font-semibold tracking-wider;
+}
+
+.main-content {
+  @apply h-full w-full overflow-y-auto;
+}

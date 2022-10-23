@@ -14,5 +14,5 @@ export default function Setting() {
 }
 
 Setting.getLayout = (page) => {
-  return <MainLayout active={"settings"}>{page}</MainLayout>;
+  return <MainLayout active={"setting"}>{page}</MainLayout>;
 };
