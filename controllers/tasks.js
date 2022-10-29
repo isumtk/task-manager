@@ -1,8 +1,19 @@
 const Task = require("../models/task");
 
-const getAllTasks = async (req, res) => {
+const getAllUnfinishedTasks = async (req, res) => {
   try {
-    const tasks = await Task.find({});
+    const tasks = await Task.find({ completed: false });
+    res.status(200).json({ tasks });
+  } catch (error) {
+    res.status(500).json({ message: error });
+  }
+};
+
+const getAllFinishedTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find({
+      completed: true,
+    });
     res.status(200).json({ tasks });
   } catch (error) {
     res.status(500).json({ message: error });
@@ -65,4 +76,11 @@ const deleteTask = async (req, res) => {
   res.send("Delete the Task");
 };
 
-module.exports = { getAllTasks, createTask, getTask, updateTask, deleteTask };
+module.exports = {
+  getAllUnfinishedTasks,
+  getAllFinishedTasks,
+  createTask,
+  getTask,
+  updateTask,
+  deleteTask,
+};
